@@ -430,7 +430,7 @@ namespace System.Net
 
 				X509Chain chain = new X509Chain ();
 				chain.ChainPolicy = new X509ChainPolicy ();
-				chain.ChainPolicy.RevocationMode = X509RevocationMode.Offline;
+				chain.ChainPolicy.RevocationMode = X509RevocationMode.NoCheck;
 				for (int i = 1; i < certs.Count; i++) {
 					X509Certificate2 c2 = new X509Certificate2 (certs [i].RawData);
 					chain.ChainPolicy.ExtraStore.Add (c2);
